@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>Hello world</title>
+      <title>开始</title>
       <link href="/2024/09/10/hello-world/"/>
       <url>/2024/09/10/hello-world/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>你好，欢迎来到我的个人博客。在这里我会分享我的一些项目和心得。<br>早几个月前，我刚刚完成了服务器的搭建，并在其上完成了typecho的搭建，选取的是Joe主题。早就听说了github上的page+hexo的玩法，现在我也尝试成功了。</p>]]></content>
       
       
       
