@@ -4,12 +4,43 @@
   
     
     <entry>
+      <title>hexo主题添加Giscus评论系统（Butterfly主题）</title>
+      <link href="/post/20240912102551.html"/>
+      <url>/post/20240912102551.html</url>
+      
+        <content type="html"><![CDATA[<hr><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>当前使用的hexo生成的静态博客，主题是butterfly。当前主题支持很多的的评论系统：</p><p><img src="https://raw.githubusercontent.com/Peter-JiY/pictures/main//image-20240912111244972.png" alt="image-20240912111244972"></p><p>图中标出来的就是butterfly现在支持的评论系统。</p><p>Giscus是基于GitHub discussions的，再加上我们的博客也在GitHub搭建的，放在一起算了，省心不用管理。反正GitHub的仓库有1G的可存储空间。甚至可以在另外建一个仓库专门做图床使用。</p><p>Giscus主要基于在GitHub Discussion驱动的，全部数据都存储在GitHub Discussion之中，作者可以在GitHub上管理评论，相对于gitalk的授权较少。</p><h2 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程"></a>操作流程</h2><ol><li>选择一个仓库存储Discussions，开启GitHub Discussions</li><li>安装giscus</li><li>获取配置添加到博客</li></ol><h3 id="1-选择一个仓库"><a href="#1-选择一个仓库" class="headerlink" title="1.选择一个仓库"></a>1.选择一个仓库</h3><p>首先需要生一个仓库我这里采用的是我搭建博客的仓库<u>xxx&#x2F;xxx.github.io</u>。然后我们打开仓库的设置，把discussion打上√</p><p><img src="https://raw.githubusercontent.com/Peter-JiY/pictures/main//image-20240912121253920.png" alt="image-20240912121253920"></p><h3 id="2-着手安装giscus"><a href="#2-着手安装giscus" class="headerlink" title="2.着手安装giscus"></a>2.着手安装giscus</h3><p>点击进入<a href="https://github.com/apps/giscus">这里</a>进入安装界面，这里我我已经install过了所以显示为configure。如果是第一次进入页面应该是绿色的<strong>install</strong>按钮。</p><p><img src="https://raw.githubusercontent.com/Peter-JiY/pictures/main//image-20240912122042556.png" alt="image-20240912122042556"><br>点击<strong>install</strong>后进入新的页面进行设置</p><p><img src="https://raw.githubusercontent.com/Peter-JiY/pictures/main//image-20240912122455370.png" alt="image-20240912122455370"></p><h3 id="3-进入官方获取配置信息"><a href="#3-进入官方获取配置信息" class="headerlink" title="3.进入官方获取配置信息"></a>3.进入官方获取配置信息</h3><p>仓库名填写之前做discussion的仓库名。形如  <u>xxx&#x2F;xxx.github.io</u></p><p><img src="https://raw.githubusercontent.com/Peter-JiY/pictures/main//image-20240912123120097.png" alt="image-20240912123120097"></p><p>继续勾选</p><p><img src="https://raw.githubusercontent.com/Peter-JiY/pictures/main//image-20240912123641865.png" alt="image-20240912123641865"></p><p>按照图中勾选</p><p><img src="https://raw.githubusercontent.com/Peter-JiY/pictures/main//image-20240912123745828.png" alt="image-20240912123745828"></p><p>出现形如此类的东西复制一份等会需要用到</p><p><img src="https://raw.githubusercontent.com/Peter-JiY/pictures/main//image-20240912123939921.png" alt="image-20240912123939921"></p><p>因为我没填写所以是为空的，你填写就会有东西。</p><h3 id="4-将配置文件写入config"><a href="#4-将配置文件写入config" class="headerlink" title="4.将配置文件写入config"></a>4.将配置文件写入config</h3><p>打开_config.butterfly.yml先把use这里改了</p><p><img src="https://raw.githubusercontent.com/Peter-JiY/pictures/main//image-20240912124130004.png" alt="image-20240912124130004"></p><p>找到这giscus然后对照刚刚复制的scrpt把标红的地方依次填写完整。</p><p><img src="https://raw.githubusercontent.com/Peter-JiY/pictures/main//image-20240912124339222.png" alt="image-20240912124339222"></p><p>然后保存，执行命令。</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure><p>稍等片刻查看网站，应该是这样的</p><p><img src="https://raw.githubusercontent.com/Peter-JiY/pictures/main//image-20240912124545071.png" alt="image-20240912124545071"></p><p>快来试试吧。本博客已搭载giscus，欢迎评论。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JDBC连接数据池的相关应用（个人理解学习记录）</title>
       <link href="/post/20240911214241.html"/>
       <url>/post/20240911214241.html</url>
       
         <content type="html"><![CDATA[<p>数据连接池的主要概念就是相当于一的超大的水杯喝水，而每次举起杯子又很麻烦，所以就连上吸管去喝，又不断开，保持一定的连接数。</p><p>我的想法是先写一个通用的连接池连接，然后再根据增删改查的相关，再在小模块里面使用不同的sql语句完成相应的操作，最后返还数据池。</p><p>说的直白点就是登录数据库的操作简化成类模块。</p><p>先写一个通用的模板。</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> com.mchange.v2.c3p0.ComboPooledDataSource;</span><br><span class="line"><span class="keyword">import</span> com.mysql.cj.jdbc.Driver;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;</span><br><span class="line"><span class="keyword">import</span> java.sql.PreparedStatement;</span><br><span class="line"><span class="keyword">import</span> java.sql.ResultSet;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">C3P0Utils</span> &#123;</span><br><span class="line">    <span class="comment">// 静态数据源实例</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">ComboPooledDataSource</span> <span class="variable">dataSource</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ComboPooledDataSource</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 配置C3P0连接池</span></span><br><span class="line">            dataSource.setDriverClass(Driver.class.getName());</span><br><span class="line">            dataSource.setJdbcUrl(<span class="string">&quot;jdbc:mysql://localhost:3306/mydb1&quot;</span>);</span><br><span class="line">            dataSource.setUser(<span class="string">&quot;root&quot;</span>);</span><br><span class="line">            dataSource.setPassword(<span class="string">&quot;123456&quot;</span>);</span><br><span class="line">            dataSource.setInitialPoolSize(<span class="number">10</span>);</span><br><span class="line">            dataSource.setMaxPoolSize(<span class="number">20</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取数据库连接</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title function_">getConnection</span><span class="params">()</span> <span class="keyword">throws</span> SQLException &#123;</span><br><span class="line">        <span class="keyword">return</span> dataSource.getConnection();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">t1</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">PreparedStatement</span> <span class="variable">preparedStatement</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="type">ResultSet</span> <span class="variable">resultSet</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 获取连接</span></span><br><span class="line">            conn = C3P0Utils.getConnection();</span><br><span class="line">            <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;select * from user&quot;</span>;</span><br><span class="line">            preparedStatement = conn.prepareStatement(sql);</span><br><span class="line">            resultSet = preparedStatement.executeQuery();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 处理结果集</span></span><br><span class="line">            <span class="keyword">while</span> (resultSet.next()) &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;User ID: &quot;</span> + resultSet.getInt(<span class="string">&quot;id&quot;</span>) + <span class="string">&quot;, User Name: &quot;</span> + resultSet.getString(<span class="string">&quot;name&quot;</span>));</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="comment">// 关闭资源</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (resultSet != <span class="literal">null</span>) resultSet.close();</span><br><span class="line">                <span class="keyword">if</span> (preparedStatement != <span class="literal">null</span>) preparedStatement.close();</span><br><span class="line">                <span class="keyword">if</span> (conn != <span class="literal">null</span>) conn.close(); <span class="comment">// 将连接返回给连接池</span></span><br><span class="line">            &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>然后再在自己的需求里面执行不同的增删改查语句即可</p>]]></content>
       
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
       
       
         <tags>
@@ -29,6 +60,12 @@
       
         <content type="html"><![CDATA[<p>你好，欢迎来到我的个人博客。在这里我会分享我的一些项目和心得。<br>早几个月前，我刚刚完成了服务器的搭建，并在其上完成了typecho的搭建，选取的是Joe主题。早就听说了github上的page+hexo的玩法，现在我也尝试成功了。</p>]]></content>
       
+      
+      <categories>
+          
+          <category> 心情 </category>
+          
+      </categories>
       
       
     </entry>
