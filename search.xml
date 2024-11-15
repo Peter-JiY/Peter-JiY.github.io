@@ -8,7 +8,7 @@
       <link href="/post/20241115162913.html"/>
       <url>/post/20241115162913.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近参加了一个followme的活动，活动的任务是ardunio rp2024 connect的板子，主要完成三个任务：</p><ol><li><p>搭建环境并开启第一步Blink三色LED &#x2F; 串口打印Hello DigiKey &amp; EEWorld！；</p></li><li><p>学习IMU基础知识，调试IMU传感器，通过串口打印六轴原始数据；</p></li><li><p>学习PDM麦克风技术知识，调试PDM麦克风，通过串口打印收音数据和音频波形。</p></li></ol><p><img src="https://raw.githubusercontent.com/Peter-JiY/pictures/main//image-20241115163958320.png" alt="image-20241115163958320"></p><p>纯新手，朋友介绍过来玩的硬件。啥也不会，一边学一边玩吧。</p><p>干啥第一件事肯定就是搭环境。</p><p>先去ardunio的<a href="https://www.arduino.cc/en/software">官网</a>，找安装包，安装ardunio的ide。</p><p><img src="https://raw.githubusercontent.com/Peter-JiY/pictures/main//image-20241115164605137.png" alt="image-20241115164605137"></p>]]></content>
       
       
       
