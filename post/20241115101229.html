@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>关于hexo静态文件内置图表无法显示问题 | Peter-JiY's Blog</title><meta name="author" content="Peter-JiY"><meta name="copyright" content="Peter-JiY"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="前言偶然间发现typora的图表功能，发现挺哇塞，最起码不用再打开专业工具，画图导出，巴拉巴拉。 估计我也就这一股新奇的劲。。。 言归正传 问题我采用的hexo+githubpage的方式搭建的博客，本地写的一些流程图都能渲染成功，为何上传到GitHub，网页展示全代码块  如果渲染正常应该是这样的：  不应该啊，我第一时间思考到这个软件大多数都是通过css渲染实现的，去谷歌一看，已经有人做出了相">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>关于hexo静态文件内置图表无法显示问题 | Peter-JiY's Blog</title><meta name="author" content="Peter-JiY"><meta name="copyright" content="Peter-JiY"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言偶然间发现typora的图表功能，发现挺哇塞，最起码不用再打开专业工具，画图导出，巴拉巴拉。 估计我也就这一股新奇的劲。。。 言归正传 问题我采用的hexo+githubpage的方式搭建的博客，本地写的一些流程图都能渲染成功，为何上传到GitHub，网页展示全代码块  如果渲染正常应该是这样的：  不应该啊，我第一时间思考到这个软件大多数都是通过css渲染实现的，去谷歌一看，已经有人做出了相">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于hexo静态文件内置图表无法显示问题">
 <meta property="og:url" content="http://example.com/post/20241115101229.html">
@@ -130,7 +130,7 @@
       win.activateLightMode = () => {
         document.documentElement.setAttribute('data-theme', 'light')
         if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
         }
       }
       const t = saveToLocal.get('theme')

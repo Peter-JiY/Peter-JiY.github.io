@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>基于node.js开发的项目开发历程 | Peter-JiY's Blog</title><meta name="author" content="Peter-JiY"><meta name="copyright" content="Peter-JiY"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="前言这是一个练练手的项目，开发起始时间为2024.10.29尽量赶在一周内完成该项目的开发。项目——连锁餐厅管理系统采用前后端分离的方式创建系统，首先前端打算采用Vue 2 + Vuex + Vue Router。 计划临时有变，新的更改为全栈采用node.js 实践-前端1.基础配置1.首先安装Node.js和npm。此处略过….使用 Vue CLI创建Vue项目。 2.安装 Vue CL：np">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>基于node.js开发的项目开发历程 | Peter-JiY's Blog</title><meta name="author" content="Peter-JiY"><meta name="copyright" content="Peter-JiY"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言这是一个练练手的项目，开发起始时间为2024.10.29尽量赶在一周内完成该项目的开发。项目——连锁餐厅管理系统采用前后端分离的方式创建系统，首先前端打算采用Vue 2 + Vuex + Vue Router。 计划临时有变，新的更改为全栈采用node.js 实践-前端1.基础配置1.首先安装Node.js和npm。此处略过….使用 Vue CLI创建Vue项目。 2.安装 Vue CL：np">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于node.js开发的项目开发历程">
 <meta property="og:url" content="http://example.com/post/20241029163650.html">
@@ -131,7 +131,7 @@
       win.activateLightMode = () => {
         document.documentElement.setAttribute('data-theme', 'light')
         if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
         }
       }
       const t = saveToLocal.get('theme')
