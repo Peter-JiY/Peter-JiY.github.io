@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>hexo搭建一个网页播放器</title>
+      <link href="/post/20241118152148.html"/>
+      <url>/post/20241118152148.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>katex数学公式的写法</title>
       <link href="/post/20241117210526.html"/>
       <url>/post/20241117210526.html</url>
